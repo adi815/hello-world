@@ -1,0 +1,7 @@
+%Lecture 3
+
+Lecture3Data = xlsread('Lecture3Data.xlsx');
+
+YearlyAverages = mean(reshape(Lecture3Data,12,[]));
+
+YearlyStDev = std(reshape(Lecture3Data,12,[]));

@@ -1,0 +1,17 @@
+%This file imports the data for monthly New York Harbor conventional 
+%gasoline prices from January 1987 to December 2016.
+%It calculates the average price of gasoline in every year, and then 
+%writes this answer to another Excel file
+
+MonthlyPrices = xlsread('GasolineData.xlsx');
+YearlyAverages = mean(reshape(MonthlyPrices,12,[]));
+ArraySize = size(YearlyAverages,2);
+
+for counter = 1:ArraySize
+    disp(YearlyAverages(counter))
+    counter = counter + 1;
+end
+
+filename = 'monthly_average_price.xlsx';
+xlswrite(filename,YearlyAverages);
+
